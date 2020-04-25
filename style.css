@@ -1,0 +1,100 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+  
+body {
+    height: 100vh;
+    display: flex;
+    background-image: url(card-picture/walpaper.jpg);
+    background-repeat: round;
+}
+  
+/* size of the board */
+#game-normal {
+    width: 960px;
+    height: 400px;
+    padding: 10px;
+    margin-top: 175px;
+    /* margin: auto; */
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-wrap: wrap;
+    perspective: 1000px;
+    background-color: rgb(15, 54, 54);
+}
+
+/* normal mode */
+.mode-normal {
+    width: calc(20% - 10px);
+    height: calc(20%);
+    margin: 5px;
+    position: relative;
+    transform: scale(1);
+    transform-style: preserve-3d;
+    transition: transform .5s;
+    box-shadow: 1px 1px 1px rgba(0,0,0,.3);
+}
+  
+.mode-normal:active {
+    transform: scale(0.97);
+    transition: transform .2s;
+}
+  
+.mode-normal.flip {
+    transform: rotateY(180deg);
+}
+
+/* 
+.game-hard {
+    width: 960px;
+    height: 400px;
+    padding: 10px;
+    margin-top: 175px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-wrap: wrap;
+    perspective: 1000px;
+    background-color: rgb(15, 54, 54);
+} */
+
+/* hard mode */
+.mode-hard {
+    width: 124px;
+    height: 120px;
+    margin: 5px;
+    position: relative;
+    transform: scale(1);
+    transform-style: preserve-3d;
+    transition: transform .5s;
+    box-shadow: 1px 1px 1px rgba(0,0,0,.3);
+}
+  
+.mode-hard:active {
+    transform: scale(0.97);
+    transition: transform .2s;
+}
+  
+.mode-hard.flip {
+    transform: rotateY(180deg);
+}
+  
+.front-face,
+.back-face {
+    width: 100%;
+    height: 100%;
+    padding: 5px;
+    position: absolute;
+    border-radius: 5px;
+    /* border: 3px blue; */
+    background: white;
+    backface-visibility: hidden;
+}
+  
+.front-face {
+    transform: rotateY(180deg);
+}
+  
