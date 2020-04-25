@@ -2,24 +2,39 @@ const cards_normal = document.querySelectorAll('.mode-normal');
 const cards_hard = document.querySelectorAll('.mode-hard');
 const cards_alterra = document.querySelectorAll('.mode-alterra');
 
+let cards = cards_normal
+
+// default tampilan awal
+document.getElementById("game-hard").style.display = "none";
+document.getElementById("game-normal").style.display = "flex";
+document.getElementById("game-alterra").style.display = "none";
+
+// tampilan ketika memilih mode normal
 document.getElementById("choose-normal").onclick = function () {
-
-    // document.getElementById("").style.display = "none"; 
-    document.getElementsById("game-hard").hidden = true;
-    document.getElementById("game-normal").hidden = false;
-
+    document.getElementById("game-hard").style.display = "none";
+    document.getElementById("game-normal").style.display = "flex";
+    document.getElementById("game-alterra").style.display = "none";
+    cards = cards_normal;
 }
 
+// tampilan ketika memilih mode hard
 document.getElementById("choose-hard").onclick = function () {
-
-    // document.getElementById("").style.display = "none"; 
-    document.getElementsByClassName("game-hard").style.display = "block";
-    document.getElementsByClassName("game-normal").style.display = "none";
-
+    document.getElementById("game-hard").style.display = "flex";
+    document.getElementById("game-normal").style.display = "none";
+    document.getElementById("game-alterra").style.display = "none";
+    cards = cards_hard;
+    console.log("testss")
 }
 
-const cards = cards_normal
-// document.getElementsByClassName("mode-normal").style.display = "block";
+// tampilan ketika memilih mode alterra
+document.getElementById("choose-alterra").onclick = function () {
+    document.getElementById("game-alterra").style.display = "flex";
+    document.getElementById("game-hard").style.display = "none";
+    document.getElementById("game-normal").style.display = "none";
+    cards = cards_alterra;
+}
+
+
 let hasFlippedCard = false;
 let lockBoard = false;
 let firstCard, secondCard;
