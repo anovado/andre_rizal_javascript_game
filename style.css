@@ -14,6 +14,11 @@ body {
     background-repeat: round;
 }
 
+#game-modes{
+    margin-left: 40px;
+    margin-top: 15px;
+}
+
 #choose-normal{
     background-color: yellow;
     opacity: 70%;
@@ -51,7 +56,7 @@ body {
     transform-style: preserve-3d;
     transition: transform .5s;
     box-shadow: 1px 1px 1px rgba(0,0,0,.3);
-    opacity: 95%;
+    /* opacity: 95%; */
 }
   
 .mode-normal:active {

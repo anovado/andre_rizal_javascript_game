@@ -2,7 +2,9 @@ const cards_normal = document.querySelectorAll('.mode-normal');
 const cards_hard = document.querySelectorAll('.mode-hard');
 const cards_alterra = document.querySelectorAll('.mode-alterra');
 
-let cards = cards_normal
+
+
+let cards = cards_alterra;
 
 // default tampilan awal
 document.getElementById("game-hard").style.display = "none";
@@ -10,11 +12,13 @@ document.getElementById("game-normal").style.display = "flex";
 document.getElementById("game-alterra").style.display = "none";
 
 // tampilan ketika memilih mode normal
+// if (document.getElementById("choose-normal").onclick )
 document.getElementById("choose-normal").onclick = function () {
     document.getElementById("game-hard").style.display = "none";
     document.getElementById("game-normal").style.display = "flex";
     document.getElementById("game-alterra").style.display = "none";
     cards = cards_normal;
+    return cards
 }
 
 // tampilan ketika memilih mode hard
@@ -23,7 +27,9 @@ document.getElementById("choose-hard").onclick = function () {
     document.getElementById("game-normal").style.display = "none";
     document.getElementById("game-alterra").style.display = "none";
     cards = cards_hard;
-    console.log("testss")
+    return cards
+
+    // console.log("testss")
 }
 
 // tampilan ketika memilih mode alterra
@@ -32,6 +38,8 @@ document.getElementById("choose-alterra").onclick = function () {
     document.getElementById("game-hard").style.display = "none";
     document.getElementById("game-normal").style.display = "none";
     cards = cards_alterra;
+    return cards
+
 }
 
 
@@ -84,7 +92,7 @@ function unflipCards() {
         secondCard.classList.remove('flip');
 
         resetBoard();
-    }, 1500);
+    }, 750);
 }
 
 function resetBoard() {
