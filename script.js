@@ -34,6 +34,7 @@ document.getElementById("choose-normal").onclick = function () {
     document.getElementById("game-alterra").style.display = "none";
     cards = cards_normal;
     cards.forEach(card => card.addEventListener('click', flipCard));
+    shuffle();
     moves = 0;
     timeinterval = startTimer(30);
     return cards
@@ -48,6 +49,7 @@ document.getElementById("choose-hard").onclick = function () {
     document.getElementById("game-alterra").style.display = "none";
     cards = cards_hard;
     cards.forEach(card => card.addEventListener('click', flipCard));
+    shuffle();
     moves = 0;
     timeinterval = startTimer(30);
     return cards
@@ -62,6 +64,7 @@ document.getElementById("choose-alterra").onclick = function () {
     document.getElementById("game-normal").style.display = "none";
     cards = cards_alterra;
     cards.forEach(card => card.addEventListener('click', flipCard));
+    shuffle();
     moves = 0;
     timeinterval = startTimer(60);
     return cards
@@ -121,12 +124,14 @@ function resetBoard() {
     [firstCard, secondCard] = [null, null];
 }
 
-(function shuffle() {
+function shuffle() {
     cards.forEach(card => {
         let randomPos = Math.floor(Math.random() * cards.length);
         card.style.order = randomPos;
     });
-})();
+};
+
+shuffle();
 
 // the code that runs the program
 cards.forEach(card => card.addEventListener('click', flipCard));
