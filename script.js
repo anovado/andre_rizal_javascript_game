@@ -2,8 +2,6 @@ const cards_normal = document.querySelectorAll('.mode-normal');
 const cards_hard = document.querySelectorAll('.mode-hard');
 const cards_alterra = document.querySelectorAll('.mode-alterra');
 
-// let difficulty = document.getElementById("choosing-mode");
-let difficulty = document.getElementById("");
 let cards = cards_normal;
 let moves = 0;
 let timeInterval;
@@ -153,3 +151,13 @@ shuffle();
 
 // the code that runs the program
 cards.forEach(card => card.addEventListener('click', flipCard));
+
+
+
+// code for start.html
+// let myWindow;
+
+function closeWin() {
+    console.log("testss")
+    window.close();
+}
