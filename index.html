@@ -9,13 +9,25 @@
 </head>
 
 <body>
-    <section>
+    <section id="game-modes">
         <button type="button" id="choose-normal">Normal Mode</button>
         <button type="button" id="choose-hard">Hard Mode</button>
         <button type="button" id="choose-alterra">Alterra Mode</button>
-        <!-- <a href="#" id="choose-normal">Normal Mode</a> -->
-        <!-- <a href="#" id="choose-hard">Hard Mode</a> -->
-        <!-- <a href="#" id="choose-alterra">Alterra Mode</a> -->
+        <!-- <label for="choosing-mode">Difficulty: </label><br />
+        <select name="gamemode" id="choosing-mode">
+            <option value="choose-normal">Normal Mode</option>
+            <option value="choose-hard">Hard Mode</option>
+            <option value="choose-alterra">Alterra Mode</option>
+        </select> -->
+
+    </section>
+
+    <section id="game-timer">
+        <div>Timer: <span id="time"></span></div>
+    </section>
+
+    <section id="move-counter-section">
+        <div>Moves = <span id="move-counter">0</span></div>
     </section>
     <section id="game-normal">
         <div class="mode-normal" data-framework="naruto">
@@ -392,13 +404,13 @@
             <img class="back-face" src="./card-picture/konoha_leaf-logo-277E238E29-seeklogo.com.png"
                 alt="Picture Thumbnail" />
         </div>
-        <div class="mode-alterra" data-framework="pain">
-            <img class="front-face" src="./card-picture/pain.jpg" alt="pain" />
+        <div class="mode-alterra" data-framework="jiraiya">
+            <img class="front-face" src="./card-picture/jiraiya.jpg" alt="jiraiya" />
             <img class="back-face" src="./card-picture/konoha_leaf-logo-277E238E29-seeklogo.com.png"
                 alt="Picture Thumbnail" />
         </div>
-        <div class="mode-alterra" data-framework="pain">
-            <img class="front-face" src="./card-picture/pain.jpg" alt="pain" />
+        <div class="mode-alterra" data-framework="jiraiya">
+            <img class="front-face" src="./card-picture/jiraiya.jpg" alt="jiraiya" />
             <img class="back-face" src="./card-picture/konoha_leaf-logo-277E238E29-seeklogo.com.png"
                 alt="Picture Thumbnail" />
         </div>

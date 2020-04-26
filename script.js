@@ -2,7 +2,18 @@ const cards_normal = document.querySelectorAll('.mode-normal');
 const cards_hard = document.querySelectorAll('.mode-hard');
 const cards_alterra = document.querySelectorAll('.mode-alterra');
 
-let cards = cards_normal
+// let difficulty = document.getElementById("choosing-mode");
+let difficulty = document.getElementById("");
+let cards = cards_normal;
+let moves = 0;
+
+// if (difficulty === "choose-normal") {
+//     cards = cards_normal;
+// } else if (difficulty === "choose-hard") {
+//     cards = cards_hard;
+// } else {
+//     card = cards_alterra;
+// }
 
 // default tampilan awal
 document.getElementById("game-hard").style.display = "none";
@@ -10,11 +21,15 @@ document.getElementById("game-normal").style.display = "flex";
 document.getElementById("game-alterra").style.display = "none";
 
 // tampilan ketika memilih mode normal
+// if (document.getElementById("choose-normal").onclick )
 document.getElementById("choose-normal").onclick = function () {
     document.getElementById("game-hard").style.display = "none";
     document.getElementById("game-normal").style.display = "flex";
     document.getElementById("game-alterra").style.display = "none";
     cards = cards_normal;
+    moves = 0;
+    startTimer(30);
+    return cards
 }
 
 // tampilan ketika memilih mode hard
@@ -23,7 +38,10 @@ document.getElementById("choose-hard").onclick = function () {
     document.getElementById("game-normal").style.display = "none";
     document.getElementById("game-alterra").style.display = "none";
     cards = cards_hard;
-    console.log("testss")
+    moves = 0;
+    startTimer(30);
+    return cards
+
 }
 
 // tampilan ketika memilih mode alterra
@@ -32,6 +50,9 @@ document.getElementById("choose-alterra").onclick = function () {
     document.getElementById("game-hard").style.display = "none";
     document.getElementById("game-normal").style.display = "none";
     cards = cards_alterra;
+    moves = 0;
+    startTimer(60);
+    return cards
 }
 
 
@@ -63,8 +84,9 @@ function flipCard() {
 // function to check if the selected cards are matched
 function checkForMatch() {
     let isMatch = firstCard.dataset.framework === secondCard.dataset.framework;
-
+    moves += 1;
     isMatch ? disableCards() : unflipCards();
+
 }
 
 // function to disable cards that have already been guessed correctly
@@ -84,7 +106,7 @@ function unflipCards() {
         secondCard.classList.remove('flip');
 
         resetBoard();
-    }, 1500);
+    }, 750);
 }
 
 function resetBoard() {
@@ -94,10 +116,47 @@ function resetBoard() {
 
 (function shuffle() {
     cards.forEach(card => {
-        let randomPos = Math.floor(Math.random() * 12);
+        let randomPos = Math.floor(Math.random() * cards.length);
         card.style.order = randomPos;
     });
 })();
 
 // the code that runs the program
 cards.forEach(card => card.addEventListener('click', flipCard));
+
+// function timer
+
+function startTimer(duration) {
+    let timer = duration, minutes, seconds;
+    display = document.querySelector('#time');
+    setInterval(function () {
+        minutes = parseInt(timer / 60, 10);
+        seconds = parseInt(timer % 60, 10);
+
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+
+        display.textContent = minutes + ":" + seconds;
+
+        if (timer == 0) {
+            // alert("GAME OVER!!")
+            // break;
+            clearInterval(timer)
+        }
+        if (timer > 0) {
+            --timer;
+        }
+        // alert("GAME OVER!")
+        // if (--timer < 0) {
+        //     // timer = duration;
+        // }
+    }, 1000);
+}
+
+
+// need to change it to only start when the mode has been chosen
+// function setTimer() {
+//     let timer = 10;
+//     display = document.querySelector('#time');
+//     startTimer(timer, display);
+// };
