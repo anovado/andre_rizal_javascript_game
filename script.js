@@ -105,10 +105,14 @@ function flipCard() {
     checkForMatch();
 }
 
+var count = 0
 // function to check if the selected cards are matched
 function checkForMatch() {
     let isMatch = firstCard.dataset.framework === secondCard.dataset.framework;
-    moves += 1;
+    var display = document.getElementById("move-counter")
+    count++;
+    display.innerHTML = count;
+    // moves += 1;
     isMatch ? disableCards() : unflipCards();
 
 }
