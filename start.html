@@ -1,23 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./style.css">
 </head>
+
 <body class="body-start grid-container">
     <div class="rule-game item3">
-        <
-        <h1 class="title">I WILL BECOME HOKAGE</h1>
+        <h1 class="title">SELEKSI CHUNIN</h1>
         <br>
         <h2 class="">Deskripsi Permainan</h2>
         <ol>
-            <li class="text-deskripsi">Permainan ini adalah ujian untuk mereka yang ingin menjadi Hokage</li>
-            <li class="text-deskripsi">Untuk menjadi hokage kamu akan melewati tiga ujian</li>
-            <li class="text-deskripsi">Ujian yang pertama jika kamu lulus, kamu akan menjadi seorang genin</li>
-            <li class="text-deskripsi">Ujian yang kedua adalah ujian untuk menjadi seorang chunin</li>
-            <li class="text-deskripsi">Ujian yang terakhir adalah untuk menguji apakah kamu pantas menjadi seorang Hokage?</li>
+            <li class="text-deskripsi">Permainan ini adalah ujian untuk mereka yang ingin menjadi Chunin</li>
+            <!-- <li class="text-deskripsi">Untuk menjadi hokage kamu akan melewati tiga ujian</li> -->
+            <li class="text-deskripsi">Jika kamu lulus ujian pertama, kamu akan menjadi seorang chunin</li>
+            <li class="text-deskripsi">Ujian yang kedua adalah ujian untuk menjadi seorang jounin</li>
+            <li class="text-deskripsi">Jika kamu lulus ujian kedua, kamu akan menjadi seorang jounin</li>
+            <li class="text-deskripsi">Dan apakah kamu yang akan menjadi hokage selanjutnya?</li>
         </ol>
         <!-- <h2 class="">Peraturan Permainan</h2>
         <ol class="">
@@ -27,7 +29,9 @@
     <div class="button-menu item2">
         <div id="start">
             <button class="movebg">
-                <a href="/index.html"><h1 class="text-menu">START</h1></a>
+                <a href="/index.html" id="link-start-menu">
+                    <h1 class="text-menu">START</h1>
+                </a>
             </button>
         </div>
         <div id="credit">
@@ -36,11 +40,13 @@
             </button>
         </div>
         <div id="exit">
-            <button class="movebg">
+            <button class="movebg" onclick="closeWin()">
                 <h1 class="text-menu">EXIT</h1>
             </button>
         </div>
     </div>
-    
+    <script src="./script.js"></script>
+
 </body>
+
 </html>
