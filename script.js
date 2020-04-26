@@ -6,6 +6,7 @@ const cards_alterra = document.querySelectorAll('.mode-alterra');
 let difficulty = document.getElementById("");
 let cards = cards_normal;
 let moves = 0;
+let timeinterval;
 
 // if (difficulty === "choose-normal") {
 //     cards = cards_normal;
@@ -23,35 +24,38 @@ document.getElementById("game-alterra").style.display = "none";
 // tampilan ketika memilih mode normal
 // if (document.getElementById("choose-normal").onclick )
 document.getElementById("choose-normal").onclick = function () {
+    clearInterval(timeinterval);
     document.getElementById("game-hard").style.display = "none";
     document.getElementById("game-normal").style.display = "flex";
     document.getElementById("game-alterra").style.display = "none";
     cards = cards_normal;
     moves = 0;
-    startTimer(30);
+    timeinterval = startTimer(30);
     return cards
 }
 
 // tampilan ketika memilih mode hard
 document.getElementById("choose-hard").onclick = function () {
+    clearInterval(timeinterval);
     document.getElementById("game-hard").style.display = "flex";
     document.getElementById("game-normal").style.display = "none";
     document.getElementById("game-alterra").style.display = "none";
     cards = cards_hard;
     moves = 0;
-    startTimer(30);
+    timeinterval = startTimer(30);
     return cards
 
 }
 
 // tampilan ketika memilih mode alterra
 document.getElementById("choose-alterra").onclick = function () {
+    clearInterval(timeinterval);
     document.getElementById("game-alterra").style.display = "flex";
     document.getElementById("game-hard").style.display = "none";
     document.getElementById("game-normal").style.display = "none";
     cards = cards_alterra;
     moves = 0;
-    startTimer(60);
+    timeinterval = startTimer(60);
     return cards
 }
 
@@ -129,7 +133,7 @@ cards.forEach(card => card.addEventListener('click', flipCard));
 function startTimer(duration) {
     let timer = duration, minutes, seconds;
     display = document.querySelector('#time');
-    setInterval(function () {
+    const interval = setInterval(function () {
         minutes = parseInt(timer / 60, 10);
         seconds = parseInt(timer % 60, 10);
 
@@ -151,6 +155,7 @@ function startTimer(duration) {
         //     // timer = duration;
         // }
     }, 1000);
+    return interval;
 }
 
 
