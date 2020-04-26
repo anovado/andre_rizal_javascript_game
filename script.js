@@ -3,6 +3,7 @@ const cards_hard = document.querySelectorAll('.mode-hard');
 const cards_alterra = document.querySelectorAll('.mode-alterra');
 
 // let difficulty = document.getElementById("choosing-mode");
+let difficulty = document.getElementById("");
 let cards = cards_normal;
 let moves = 0;
 
@@ -27,6 +28,7 @@ document.getElementById("choose-normal").onclick = function () {
     document.getElementById("game-alterra").style.display = "none";
     cards = cards_normal;
     moves = 0;
+    startTimer(30);
     return cards
 }
 
@@ -37,6 +39,7 @@ document.getElementById("choose-hard").onclick = function () {
     document.getElementById("game-alterra").style.display = "none";
     cards = cards_hard;
     moves = 0;
+    startTimer(30);
     return cards
 
 }
@@ -48,8 +51,8 @@ document.getElementById("choose-alterra").onclick = function () {
     document.getElementById("game-normal").style.display = "none";
     cards = cards_alterra;
     moves = 0;
+    startTimer(60);
     return cards
-
 }
 
 
@@ -123,8 +126,9 @@ cards.forEach(card => card.addEventListener('click', flipCard));
 
 // function timer
 
-function startTimer(duration, display) {
+function startTimer(duration) {
     let timer = duration, minutes, seconds;
+    display = document.querySelector('#time');
     setInterval(function () {
         minutes = parseInt(timer / 60, 10);
         seconds = parseInt(timer % 60, 10);
@@ -137,17 +141,22 @@ function startTimer(duration, display) {
         if (timer == 0) {
             // alert("GAME OVER!!")
             // break;
+            clearInterval(timer)
         }
-        if (--timer < 0) {
-            timer = duration;
+        if (timer > 0) {
+            --timer;
         }
+        // alert("GAME OVER!")
+        // if (--timer < 0) {
+        //     // timer = duration;
+        // }
     }, 1000);
 }
 
 
 // need to change it to only start when the mode has been chosen
-window.onload = function () {
-    let timer = 60;
-    display = document.querySelector('#time');
-    startTimer(timer, display);
-};
+// function setTimer() {
+//     let timer = 10;
+//     display = document.querySelector('#time');
+//     startTimer(timer, display);
+// };
