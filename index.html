@@ -13,12 +13,21 @@
         <button type="button" id="choose-normal">Normal Mode</button>
         <button type="button" id="choose-hard">Hard Mode</button>
         <button type="button" id="choose-alterra">Alterra Mode</button>
-        <!-- <a href="#" id="choose-normal">Normal Mode</a> -->
-        <!-- <a href="#" id="choose-hard">Hard Mode</a> -->
-        <!-- <a href="#" id="choose-alterra">Alterra Mode</a> -->
+        <!-- <label for="choosing-mode">Difficulty: </label><br />
+        <select name="gamemode" id="choosing-mode">
+            <option value="choose-normal">Normal Mode</option>
+            <option value="choose-hard">Hard Mode</option>
+            <option value="choose-alterra">Alterra Mode</option>
+        </select> -->
+
     </section>
-    <section>
-        <div style="text-align: end;color: aqua;">Your time <span id="time">05:00</span> minutes!</div>
+
+    <section id="game-timer">
+        <div>Timer: <span id="time"></span></div>
+    </section>
+
+    <section id="move-counter-section">
+        <div>Moves = <span id="move-counter">0</span></div>
     </section>
     <section id="game-normal">
         <div class="mode-normal" data-framework="naruto">
