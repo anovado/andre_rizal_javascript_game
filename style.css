@@ -84,12 +84,12 @@ body {
 /* normal mode */
 /* size of the board */
 #game-normal {
-    width: 930px;
+    width: 900px;
     height: 350px;
     padding: 10px;
     padding-bottom: 50px;
-    margin-top: 180px;
-    margin-left: -670px;
+    margin-top: 220px;
+    margin-left: -720px;
     margin-right: auto;
     display: flex;
     flex-wrap: wrap-reverse;
@@ -100,8 +100,8 @@ body {
 
 /* size of each card */
 .mode-normal {
-    width: 120px;
-    height: 115px;
+    width: 115px;
+    height: 110px;
     margin: 5px;
     position: relative;
     transform: scale(1);
@@ -123,13 +123,13 @@ body {
 /* hard mode */
 /* size of the board */
 #game-hard {
-    width: 930px;
+    width: 910px;
     height: 420px;
     padding: 10px;
     padding-top: 30px;
     padding-left: 15px;
-    margin-top: 150px;
-    margin-left: -670px;
+    margin-top: 220px;
+    margin-left: -720px;
     margin-right: auto;
     display: flex;
     flex-wrap: wrap;
@@ -140,8 +140,8 @@ body {
 
 /* size of each card */
 .mode-hard {
-    width: 102px;
-    height: 97px;
+    width: 100px;
+    height: 95px;
     margin: 5px;
     position: relative;
     transform: scale(1);
@@ -163,12 +163,12 @@ body {
 /* alterra mode */
 /* size of the board */
 #game-alterra {
-    width: 930px;
+    width: 910px;
     height: 420px;
     padding: 10px;
     padding-top: 20px;
-    margin-top: 150px;
-    margin-left: -670px;
+    margin-top: 220px;
+    margin-left: -720px;
     margin-right: auto;
     display: flex;
     flex-wrap: wrap;
@@ -179,8 +179,8 @@ body {
 
 /* size of each card */
 .mode-alterra {
-    width: 90px;
-    height: 85px;
+    width: 88px;
+    height: 83px;
     margin: 5px;
     position: relative;
     transform: scale(1);
