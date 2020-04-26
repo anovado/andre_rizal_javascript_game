@@ -8,6 +8,10 @@ let cards = cards_normal;
 let moves = 0;
 let timeinterval;
 
+let hasFlippedCard = false;
+let lockBoard = false;
+let firstCard, secondCard;
+
 // if (difficulty === "choose-normal") {
 //     cards = cards_normal;
 // } else if (difficulty === "choose-hard") {
@@ -29,6 +33,7 @@ document.getElementById("choose-normal").onclick = function () {
     document.getElementById("game-normal").style.display = "flex";
     document.getElementById("game-alterra").style.display = "none";
     cards = cards_normal;
+    cards.forEach(card => card.addEventListener('click', flipCard));
     moves = 0;
     timeinterval = startTimer(30);
     return cards
@@ -37,10 +42,12 @@ document.getElementById("choose-normal").onclick = function () {
 // tampilan ketika memilih mode hard
 document.getElementById("choose-hard").onclick = function () {
     clearInterval(timeinterval);
+    lockBoard = false;
     document.getElementById("game-hard").style.display = "flex";
     document.getElementById("game-normal").style.display = "none";
     document.getElementById("game-alterra").style.display = "none";
     cards = cards_hard;
+    cards.forEach(card => card.addEventListener('click', flipCard));
     moves = 0;
     timeinterval = startTimer(30);
     return cards
@@ -54,15 +61,11 @@ document.getElementById("choose-alterra").onclick = function () {
     document.getElementById("game-hard").style.display = "none";
     document.getElementById("game-normal").style.display = "none";
     cards = cards_alterra;
+    cards.forEach(card => card.addEventListener('click', flipCard));
     moves = 0;
     timeinterval = startTimer(60);
     return cards
 }
-
-
-let hasFlippedCard = false;
-let lockBoard = false;
-let firstCard, secondCard;
 
 // function to flip the selected card
 function flipCard() {
