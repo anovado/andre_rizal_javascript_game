@@ -143,9 +143,9 @@ function startTimer(duration) {
         display.textContent = minutes + ":" + seconds;
 
         if (timer == 0) {
-            // alert("GAME OVER!!")
+            clearInterval(timeinterval)
+            alert("GAME OVER!!")
             // break;
-            clearInterval(timer)
         }
         if (timer > 0) {
             --timer;
