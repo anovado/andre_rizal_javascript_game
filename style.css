@@ -27,7 +27,7 @@ body {
     border-style: none;
     color: rgb(15, 54, 54);
     font-weight: 800;
-    width: 120px;
+    width: 110px;
 }
 
 #choose-hard{
@@ -37,7 +37,7 @@ body {
     border-style: none;
     color: rgb(15, 54, 54);
     font-weight: 800;
-    width: 120px;
+    width: 110px;
 }
 
 #choose-alterra{
@@ -47,7 +47,7 @@ body {
     border-style: none;
     color: rgb(15, 54, 54);
     font-weight: 800;
-    width: 120px;
+    width: 110px;
 }
 
 /* game timer */
@@ -57,11 +57,11 @@ body {
     border-radius: 4px;
     background-color: rgba(23, 94, 94, 0.6);
     height: 50px;
-    width: 250px;
+    width: 200px;
     margin-top: 20px;
     padding-top: 7px;
     color: orange;
-    margin-left: 410px;
+    margin-left: 250px;
     font-size: 30px;
 }
 
@@ -73,7 +73,7 @@ body {
     border-radius: 4px;
     background-color: rgba(23, 94, 94, 0.6);
     height: 50px;
-    width: 250px;
+    width: 200px;
     margin-top: 20px;
     padding-top: 7px;
     color: orange;
@@ -84,12 +84,12 @@ body {
 /* normal mode */
 /* size of the board */
 #game-normal {
-    width: 960px;
-    height: 390px;
+    width: 930px;
+    height: 350px;
     padding: 10px;
     padding-bottom: 50px;
-    margin-top: 220px;
-    margin-left: -745px;
+    margin-top: 180px;
+    margin-left: -670px;
     margin-right: auto;
     display: flex;
     flex-wrap: wrap-reverse;
@@ -100,8 +100,8 @@ body {
 
 /* size of each card */
 .mode-normal {
-    width: 124px;
-    height: 120px;
+    width: 120px;
+    height: 115px;
     margin: 5px;
     position: relative;
     transform: scale(1);
@@ -123,12 +123,13 @@ body {
 /* hard mode */
 /* size of the board */
 #game-hard {
-    width: 960px;
-    height: 450px;
+    width: 930px;
+    height: 420px;
     padding: 10px;
-    padding-top: 40px;
-    margin-top: 220px;
-    margin-left: -745px;
+    padding-top: 30px;
+    padding-left: 15px;
+    margin-top: 150px;
+    margin-left: -670px;
     margin-right: auto;
     display: flex;
     flex-wrap: wrap;
@@ -139,8 +140,8 @@ body {
 
 /* size of each card */
 .mode-hard {
-    width: 107px;
-    height: 100px;
+    width: 102px;
+    height: 97px;
     margin: 5px;
     position: relative;
     transform: scale(1);
@@ -162,12 +163,12 @@ body {
 /* alterra mode */
 /* size of the board */
 #game-alterra {
-    width: 960px;
-    height: 500px;
+    width: 930px;
+    height: 420px;
     padding: 10px;
-    padding-top: 40px;
-    margin-top: 220px;
-    margin-left: -745px;
+    padding-top: 20px;
+    margin-top: 150px;
+    margin-left: -670px;
     margin-right: auto;
     display: flex;
     flex-wrap: wrap;
@@ -178,8 +179,8 @@ body {
 
 /* size of each card */
 .mode-alterra {
-    width: 94px;
-    height: 90px;
+    width: 90px;
+    height: 85px;
     margin: 5px;
     position: relative;
     transform: scale(1);
@@ -213,4 +214,99 @@ body {
 .front-face {
     transform: rotateY(180deg);
 }
-  
+
+
+
+/* STARTING PAGE */
+
+.body-start {
+    background-image: url(card-picture/start-bg.jpg);
+    position: fixed;
+    align-items: center;
+    background-size: cover;
+}
+
+/* BUTTON MENU DISINI */
+
+.menu {
+    display: inline-flex;
+}
+
+.text-menu {
+    font-size: 30px;
+    color: black;
+}
+
+.movebg {
+    width: 200px;
+    background-color: red;
+    font-weight: bold;
+    position: relative;
+    left : 50px;
+    animation: mymove 1s, vibrate 1s 1s infinite alternate-reverse;
+    border-radius: 70px;
+    text-align: center;
+    margin-top: 40px;
+}
+
+#start {
+    animation-timing-function: linear;
+}
+
+#credit {
+    animation-timing-function: ease-out;
+}
+
+#exit {
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes mymove {
+    from {left: -300px;}
+    to {left: 50px; background-color: blue;}
+}
+
+@keyframes vibrate {
+    from {left: 30px;}
+    to {left: 50px; background-color: yellow;}
+}
+
+/* GRID MENU DISINI */
+
+.item1 { grid-area: header; }
+.item2 { grid-area: menu; }
+.item3 { grid-area: main; }
+.item4 { grid-area: right; }
+.item5 { grid-area: footer; }
+
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    'header header header header header header'
+    'menu main main main right right'
+    'menu footer footer footer footer footer';
+  grid-gap: 50px;
+  background-color: #2196F3;
+  padding: 10px;
+}
+
+.grid-container > div {
+  text-align: center;
+  padding: 20px 30px 110px;
+  font-size: 12px;
+  border-radius: 140px;
+}
+
+.text-deskripsi {
+    text-align: left;
+    color: black;
+}
+
+.title {
+    font-size: 40px;
+}
+
+.rule-game {
+    background-color: aquamarine;
+    opacity: 70%;
+}
