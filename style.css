@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+
 
 * {
     padding: 0;
@@ -324,13 +326,14 @@ body {
 .grid-container > div {
   text-align: center;
   padding: 0px 10px 100px;
-  font-size: 18px;
+  font-size: 20px;
   border-radius: 90px;
 }
 
 .text-deskripsi {
     text-align: left;
     color: black;
+    font-family: 'Permanent Marker', cursive;
 }
 
 .title {
@@ -369,4 +372,8 @@ body {
     display: inline-block;
     justify-content: center;
     align-items: center;
+}
+
+.text-title-des {
+    font-family: 'Permanent Marker', cursive;
 }
