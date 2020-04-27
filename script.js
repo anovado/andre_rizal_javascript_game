@@ -171,7 +171,3 @@ function reloadWindow() {
 // the code that runs the program
 cards.forEach(card => card.addEventListener('click', flipCard));
 
-window.onload = function () {
-    document.getElementById("my_starting_audio").play();
-    console.log("tests")
-}
