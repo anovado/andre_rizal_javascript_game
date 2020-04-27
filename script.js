@@ -1,14 +1,21 @@
+// getting the values of all the cards from each game mode
 const cards_normal = document.querySelectorAll('.mode-normal');
 const cards_hard = document.querySelectorAll('.mode-hard');
 const cards_alterra = document.querySelectorAll('.mode-alterra');
 
+// setting the default mode as normal
 let cards = cards_normal;
-let moves = 0;
+
 let timeInterval;
 
+let wonStatus = false;
+let checkGameOver = false;
 let hasFlippedCard = false;
 let lockBoard = false;
 let firstCard, secondCard;
+const bakaSound = new Audio('./audios/baka.mp3')
+const goodJobuSound = new Audio('./audios/good-jobu.mp3')
+const narutoTrapSound = new Audio('./audios/naruto-trap.mp3')
 
 
 function startTimer(duration) {
@@ -23,7 +30,11 @@ function startTimer(duration) {
         display.textContent = minutes + ":" + seconds;
         if (timer == 0) {
             clearInterval(timeInterval)
-            alert("GAME OVER!!")
+            // gameOver();
+            if (wonStatus === false) {
+                checkGameOver = true;
+                alert("GAME OVER!!");
+            }
             clearInterval(timer)
         }
         if (timer > 0) {
@@ -33,13 +44,13 @@ function startTimer(duration) {
     return interval;
 }
 
+
 // default tampilan awal
 document.getElementById("game-hard").style.display = "none";
 document.getElementById("game-normal").style.display = "flex";
 document.getElementById("game-alterra").style.display = "none";
 
 // tampilan ketika memilih mode normal
-// if (document.getElementById("choose-normal").onclick )
 document.getElementById("choose-normal").onclick = function () {
     clearInterval(timeInterval);
     document.getElementById("game-hard").style.display = "none";
@@ -48,7 +59,6 @@ document.getElementById("choose-normal").onclick = function () {
     cards = cards_normal;
     cards.forEach(card => card.addEventListener('click', flipCard));
     shuffle();
-    moves = 0;
     timeInterval = startTimer(30);
     return cards
 }
@@ -62,7 +72,6 @@ document.getElementById("choose-hard").onclick = function () {
     cards = cards_hard;
     cards.forEach(card => card.addEventListener('click', flipCard));
     shuffle();
-    moves = 0;
     timeInterval = startTimer(30);
     return cards
 }
@@ -76,7 +85,6 @@ document.getElementById("choose-alterra").onclick = function () {
     cards = cards_alterra;
     cards.forEach(card => card.addEventListener('click', flipCard));
     shuffle();
-    moves = 0;
     timeInterval = startTimer(60);
     return cards
 }
@@ -103,36 +111,42 @@ function flipCard() {
     checkForMatch();
 }
 
-var count = 0
+let count = 0
 // function to check if the selected cards are matched
 function checkForMatch() {
     let isMatch = firstCard.dataset.framework === secondCard.dataset.framework;
-    var display = document.getElementById("move-counter")
+    let display = document.getElementById("move-counter")
     count++;
     display.innerHTML = count;
-    // moves += 1;
     isMatch ? disableCards() : unflipCards();
 
 }
 
+let cardsLength = 0
 // function to disable cards that have already been guessed correctly
 function disableCards() {
+    goodJobuSound.play()
     firstCard.removeEventListener('click', flipCard);
     secondCard.removeEventListener('click', flipCard);
 
+    cardsLength += 2
+    if (cardsLength === cards.length && checkGameOver === false) {
+        wonStatus = true;
+        alert("YOU PASSED!!")
+    }
     resetBoard();
 }
-
 // function to flip-back cards that have been guessed incorrectly
 function unflipCards() {
     lockBoard = true;
-
+    bakaSound.play();
     setTimeout(() => {
         firstCard.classList.remove('flip');
         secondCard.classList.remove('flip');
 
         resetBoard();
     }, 750);
+
 }
 
 function resetBoard() {
@@ -151,13 +165,3 @@ shuffle();
 
 // the code that runs the program
 cards.forEach(card => card.addEventListener('click', flipCard));
-
-
-
-// code for start.html
-// let myWindow;
-
-function closeWin() {
-    console.log("testss")
-    window.close();
-}
