@@ -30,7 +30,6 @@ function startTimer(duration) {
         display.textContent = minutes + ":" + seconds;
         if (timer == 0) {
             clearInterval(timeInterval)
-            // gameOver();
             if (wonStatus === false) {
                 checkGameOver = true;
                 alert("GAME OVER!!");
@@ -45,12 +44,12 @@ function startTimer(duration) {
 }
 
 
-// default tampilan awal
+// default game mode
 document.getElementById("game-hard").style.display = "none";
 document.getElementById("game-normal").style.display = "flex";
 document.getElementById("game-alterra").style.display = "none";
 
-// tampilan ketika memilih mode normal
+// chunin game mode
 document.getElementById("choose-normal").onclick = function () {
     clearInterval(timeInterval);
     document.getElementById("game-hard").style.display = "none";
@@ -63,7 +62,7 @@ document.getElementById("choose-normal").onclick = function () {
     return cards
 }
 
-// tampilan ketika memilih mode hard
+// jounin game mode
 document.getElementById("choose-hard").onclick = function () {
     clearInterval(timeInterval);
     document.getElementById("game-hard").style.display = "flex";
@@ -76,7 +75,7 @@ document.getElementById("choose-hard").onclick = function () {
     return cards
 }
 
-// tampilan ketika memilih mode alterra
+// hokage game mode
 document.getElementById("choose-alterra").onclick = function () {
     clearInterval(timeInterval);
     document.getElementById("game-alterra").style.display = "flex";
@@ -118,13 +117,13 @@ function checkForMatch() {
     let display = document.getElementById("move-counter")
     count++;
     display.innerHTML = count;
-    isMatch ? disableCards() : unflipCards();
-
+    isMatch ? openCards() : unflipCards();
 }
 
 let cardsLength = 0
-// function to disable cards that have already been guessed correctly
-function disableCards() {
+
+// function to open cards that have already been guessed correctly
+function openCards() {
     goodJobuSound.play()
     firstCard.removeEventListener('click', flipCard);
     secondCard.removeEventListener('click', flipCard);
@@ -134,7 +133,7 @@ function disableCards() {
         wonStatus = true;
         alert("YOU PASSED!!")
     }
-    resetBoard();
+    resetCardBoard();
 }
 // function to flip-back cards that have been guessed incorrectly
 function unflipCards() {
@@ -144,12 +143,12 @@ function unflipCards() {
         firstCard.classList.remove('flip');
         secondCard.classList.remove('flip');
 
-        resetBoard();
+        resetCardBoard();
     }, 750);
 
 }
 
-function resetBoard() {
+function resetCardBoard() {
     [hasFlippedCard, lockBoard] = [false, false];
     [firstCard, secondCard] = [null, null];
 }
@@ -165,3 +164,8 @@ shuffle();
 
 // the code that runs the program
 cards.forEach(card => card.addEventListener('click', flipCard));
+
+window.onload = function () {
+    document.getElementById("my_starting_audio").play();
+    console.log("tests")
+}
