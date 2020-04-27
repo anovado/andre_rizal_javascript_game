@@ -32,7 +32,7 @@ function startTimer(duration) {
             clearInterval(timeInterval)
             if (wonStatus === false) {
                 checkGameOver = true;
-                alert("GAME OVER!!");
+                document.getElementById("game-over").style.display = "block";
             }
             clearInterval(timer)
         }
@@ -131,7 +131,8 @@ function openCards() {
     cardsLength += 2
     if (cardsLength === cards.length && checkGameOver === false) {
         wonStatus = true;
-        alert("YOU PASSED!!")
+        document.getElementById("game-win").style.display = "block";
+
     }
     resetCardBoard();
 }
@@ -162,10 +163,11 @@ function shuffle() {
 
 shuffle();
 
+// function to reload window
+function reloadWindow() {
+    location.reload()
+}
+
 // the code that runs the program
 cards.forEach(card => card.addEventListener('click', flipCard));
 
-window.onload = function () {
-    document.getElementById("my_starting_audio").play();
-    console.log("tests")
-}
