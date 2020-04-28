@@ -13,7 +13,7 @@
 body {
     height: 100vh;
     display: flex;
-    background-image: url(card-picture/walpaper.jpg);
+    background-image: url(assets/images/walpaper.jpg);
     background-repeat: round;
 }
 
@@ -248,7 +248,7 @@ body {
 /* STARTING PAGE */
 
 .body-start {
-    background-image: url(card-picture/start-bg.jpg);
+    background-image: url(assets/images/start-bg.jpg);
     /* position: fixed;
     align-items: center;
     background-size: cover; */
