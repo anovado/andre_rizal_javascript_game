@@ -9,11 +9,11 @@
 </head>
 
 <body class="body-start grid-container" onclick="music.play()">
-    <audio id="starting_audio" src="./audios/naruto-trap.mp3"></audio>
+    <audio id="starting_audio" src="./assets/audios/naruto-trap.mp3"></audio>
     <div class="item1" style="margin-bottom: -110px;margin-top: 30px;">
         <h1 class="title">SELEKSI CHUNIN</h1>
     </div>
-    <div class="rule-game item3 "  id="game-rules" style="margin-top: 40px; display:inline-block">
+    <div class="rule-game item3 " id="game-rules" style="margin-top: 40px; display:inline-block">
         <div class="">
             <br><br>
             <h2 class="text-title-des">Deskripsi Permainan</h2>
@@ -27,18 +27,18 @@
             <li class="text-deskripsi">Dan apakah kamu yang akan menjadi Hokage selanjutnya?</li>
         </ol>
     </div>
-    <div class="rule-game item3 "  id="game-credits" style="margin-top: 40px; display:inline-block">
-        <div >
+    <div class="rule-game item3 " id="game-credits" style="margin-top: 40px; display:inline-block">
+        <div>
             <br><br><br>
             <h1 class="creator">ANDRE NOVADO</h1>
         </div>
-        <div >
+        <div>
             <br>
             <h1 class="creator">SYAH RIZAL PAMUNGKAS</h1>
         </div>
-        
+
     </div>
-    <div class="button-menu item2" >
+    <div class="button-menu item2">
         <div id="start">
             <button class="movebg">
                 <a href="index.html" id="link-start-menu">
@@ -52,24 +52,24 @@
             </button>
         </div>
         <div id="exit">
-            <a href="https://www.google.com"> <button class="movebg"  >
-                <h1 class="text-menu" style="margin: revert;">EXIT</h1>
-            </button></a>
+            <a href="https://www.google.com"> <button class="movebg">
+                    <h1 class="text-menu" style="margin: revert;">EXIT</h1>
+                </button></a>
         </div>
     </div>
     <script>
-        let music = new Audio("./audios/naruto-trap.mp3");
+        let music = new Audio("./assets/audios/naruto-trap.mp3");
         let gameRules = document.getElementById("game-rules")
-            gameRules.style.display = "inline"
+        gameRules.style.display = "inline"
         let gameCredit = document.getElementById("game-credits")
         gameCredit.style.display = "none"
-        document.getElementById("credit-button").onclick = function() {
+        document.getElementById("credit-button").onclick = function () {
             let gameRules = document.getElementById("game-rules")
             gameRules.style.display = "none"
             let gameCredit = document.getElementById("game-credits")
-            gameCredit.style.display = "inline" 
+            gameCredit.style.display = "inline"
         }
-        
+
     </script>
 </body>
 

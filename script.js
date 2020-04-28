@@ -13,9 +13,9 @@ let checkGameOver = false;
 let hasFlippedCard = false;
 let lockBoard = false;
 let firstCard, secondCard;
-const bakaSound = new Audio('./audios/baka.mp3')
-const goodJobuSound = new Audio('./audios/good-jobu.mp3')
-const narutoTrapSound = new Audio('./audios/naruto-trap.mp3')
+const bakaSound = new Audio('./assets/audios/baka.mp3')
+const goodJobuSound = new Audio('./assets/audios/good-jobu.mp3')
+const narutoTrapSound = new Audio('./assets/audios/naruto-trap.mp3')
 
 
 function startTimer(duration) {
@@ -84,7 +84,7 @@ document.getElementById("choose-alterra").onclick = function () {
     cards = cards_alterra;
     cards.forEach(card => card.addEventListener('click', flipCard));
     shuffle();
-    timeInterval = startTimer(60);
+    timeInterval = startTimer(90);
     return cards
 }
 
