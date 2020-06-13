@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Seleksi Chunin</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <section id="game-over" onclick="reloadWindow()">
+        <img src="./assets/images/naruto-angry.gif" id="game-over-img" alt="game over">
+    </section>
+    <section id="game-win" onclick="reloadWindow()">
+        <img src="./assets/images/naruto-shock.gif" id="game-win-img" alt="game over">
+    </section>
+    <section id="game-modes">
+        <button type="button" id="choose-normal">Chunin</button>
+        <button type="button" id="choose-hard">Jounin</button>
+        <button type="button" id="choose-alterra">Hokage</button>
+    </section>
+
+    <section id="game-timer">
+        <div>Timer: <span id="time"></span></div>
+    </section>
+
+    <section id="move-counter-section">
+        <div>Moves = <span id="move-counter">0</span></div>
+    </section>
+
+    <section id="game-normal">
+        <div class="mode-normal" data-framework="naruto">
+            <img class="front-face" src="./assets/images/naruto.jpg" alt="naruto" />
+            <img class="back-face" src="./assets/images/konoha_leaf-logo-277E238E29-seeklogo.com.png"
+                alt="Picture Thumbnail" />
+        </div>
+        <div class="mode-normal" data-framework="naruto">
+            <img class="front-face" src="./assets/images/naruto.jpg" alt="naruto" />
+            <img class="back-face" src="./assets/images/konoha_leaf-logo-277E238E29-seeklogo.com.png"
+                alt="Picture Thumbnail" />
+        </div>
+
+        <div class="mode-normal" data-framework="sakura">
+            <img class="front-face" src="./assets/images/sakura.jpg" alt="sakura" />
+            <img class="back-face" src="./assets/images/konoha_leaf-logo-277E238E29-seeklogo.com.png"
+                alt="Picture Thumbnail" />
+        </div>
+        <div class="mode-normal" data-framework="sakura">
+            <img class="front-face" src="./assets/images/sakura.jpg" alt="sakura" />
+            <img class="back-face" src="./assets/images/konoha_leaf-logo-277E238E29-seeklogo.com.png"
+                alt="Picture Thumbnail" />
+        </div>
+
+        <div class="mode-normal" data-framework="sasuke">
+            <img class="front-face" src="./assets/images/sasuke.jpg" alt="sasuke" />
+            <img class="back-face" src="./assets/images/konoha_leaf-logo-277E238E29-seeklogo.com.png"
+                alt="Picture Thumbnail" />
+        </div>
+        <div class="mode-normal" data-framework="sasuke">
+            <img class="front-face" src="./assets/images/sasuke.jpg" alt="sasuke" />
+            <img class="back-face" src="./assets/images/konoha_leaf-logo-277E238E29-seeklogo.com.png"
+                alt="Picture Thumbnail" />
+        </div>
+
+        <div class="mode-normal" data-framework="neji">
+            <img class="front-face" src="./assets/images/neji.jpg" alt="neji" />
+            <img class="back-face" src="./assets/images/konoha_leaf-logo-277E238E29-seeklogo.com.png"
+                alt="Picture Thumbnail" />
+        </div>
+        <div class="mode-normal" data-framework="neji">
+            <img class="front-face" src="./assets/images/neji.jpg" alt="neji" />
+            <img class="back-face" src="./assets/images/konoha_leaf-logo-277E238E29-seeklogo.com.png"
+                alt="Picture Thumbnail" />
+        </div>
+
+        <div class="mode-normal" data-framework="rocklee">
+            <img class="front-face" src="./assets/images/rocklee.jpg" alt="rocklee" />
+            <img class="back-face" src="./assets/images/konoha_leaf-logo-277E238E29-seeklogo.com.png"
+                alt="Picture Thumbnail" />
+        </div>
+        <div class="mode-normal" data-framework="rocklee">
+            <img class="front-face" src="./assets/images/rocklee.jpg" alt="rocklee" />
+            <img class="back-face" src="./assets/images/konoha_leaf-logo-277E238E29-seeklogo.com.png"
+                alt="Picture Thumbnail" />
+        </div>
+
+        <div class="mode-normal" data-framework="kakashi">
+            <img class="front-face" src="./assets/images/kakashi.jpg" alt="kakashi" />
+            <img class="back-face" src="./assets/images/konoha_leaf-logo-277E238E29-seeklogo.com.png"
+                alt="Picture Thumbnail" />
+        </div>
+        <div class="mode-normal" data-framework="kakashi">
+            <img class="front-face" src="./assets/images/kakashi.jpg" alt="kakashi" />
+            <img class="back-face" src="./assets/images/konoha_leaf-logo-277E238E29-seeklogo.com.png"
+                alt="Picture Thumbnail" />
+        </div>
+
+        <div class="mode-normal" data-framework="guy">
+            <img class="front-face" src="./assets/images/guy.jpg" alt="guy" />
+            <img class="back-face" src="./assets/images/konoha_leaf-logo-277E238E29-seeklogo.com.png"
+                alt="Picture Thumbnail" />
+        </div>
+        <div class="mode-normal" data-framework="guy">
+            <img class="front-face" src="./assets/images/guy.jpg" alt="guy" />
+            <img class="back-face" src="./assets/images/konoha_leaf-logo-277E238E29-seeklogo.com.png"
+                alt="Picture Thumbnail" />
+        </div>
+    </section>
+    <section id="game-hard">
+
+        <div class="mode-hard" data-framework="naruto">
+            <img class="front-face" src="./assets/images/naruto.jpg" alt="naruto" />
+            <img class="back-face" src="./assets/images/konoha_leaf-logo-277E238E29-seeklogo.com.png"
+                alt="Picture Thumbnail" />
+        </div>
+        <div class="mode-hard" data-framework="naruto">
+            <img class="front-face" src="./assets/images/naruto.jpg" alt="naruto" />
+            <img class="back-face" src="./assets/images/konoha_leaf-logo-277E238E29-seeklogo.com.png"
+                alt="Picture Thumbnail" />
+        </div>
+
+        <div class="mode-hard" data-framework="sakura">
+            <img class="front-face" src="./assets/images/sakura.jpg" alt="sakura" />
+            <img class="back-face" src="./assets/images/konoha_leaf-logo-277E238E29-seeklogo.com.png"
+                alt="Picture Thumbnail" />
+        </div>
+        <div class="mode-hard" data-framework="sakura">
+            <img class="front-face" src="./assets/images/sakura.jpg" alt="sakura" />
+            <img class="back-face" src="./assets/images/konoha_leaf-logo-277E238E29-seeklogo.com.png"
+                alt="Picture Thumbnail" />
+        </div>
+
+        <div class="mode-hard" data-framework="sasuke">
+            <img class="front-face" src="./assets/images/sasuke.jpg" alt="sasuke" />
+            <img class="back-face" src="./assets/images/konoha_leaf-logo-277E238E29-seeklogo.com.png"
+                alt="Picture Thumbnail" />
+        </div>
+        <div class="mode-hard" data-framework="sasuke">
+            <img class="front-face" src="./assets/images/sasuke.jpg" alt="sasuke" />
+            <img class="back-face" src="./assets/images/konoha_leaf-logo-277E238E29-seeklogo.com.png"
+                alt="Picture Thumbnail" />
+        </div>
+
+        <div class="mode-hard" data-framework="neji">
+            <img class="front-face" src="./assets/images/neji.jpg" alt="neji" />
+            <img class="back-face" src="./assets/images/konoha_leaf-logo-277E238E29-seeklogo.com.png"
+                alt="Picture Thumbnail" />
+        </div>
+        <div class="mode-hard" data-framework="neji">
+            <img class="front-face" src="./assets/images/neji.jpg" alt="neji" />
+            <img class="back-face" src="./assets/images/konoha_leaf-logo-277E238E29-seeklogo.com.png"
+                alt="Picture Thumbnail" />
+        </div>
+
+        <div class="mode-hard" data-framework="rocklee">
+            <img class="front-face" src="./assets/images/rocklee.jpg" alt="rocklee" />
+            <img class="back-face" src="./assets/images/konoha_leaf-logo-277E238E29-seeklogo.com.png"
+                alt="Picture Thumbnail" />
+        </div>
+        <div class="mode-hard" data-framework="rocklee">
+            <img class="front-face" src="./assets/images/rocklee.jpg" alt="rocklee" />
+            <img class="back-face" src="./assets/images/konoha_leaf-logo-277E238E29-seeklogo.com.png"
+                alt="Picture Thumbnail" />
+        </div>
+
+        <div class="mode-hard" data-framework="kakashi">
+            <img class="front-face" src="./assets/images/kakashi.jpg" alt="kakashi" />
+            <img class="back-face" src="./assets/images/konoha_leaf-logo-277E238E29-seeklogo.com.png"
+                alt="Picture Thumbnail" />
+        </div>
+        <div class="mode-hard" data-framework="kakashi">
+            <img class="front-face" src="./assets/images/kakashi.jpg" alt="kakashi" />
+            <img class="back-face" src="./assets/images/konoha_leaf-logo-277E238E29-seeklogo.com.png"
+                alt="Picture Thumbnail" />
+        </div>
+
+        <div class="mode-hard" data-framework="guy">
+            <img class="front-face" src="./assets/images/guy.jpg" alt="guy" />
+            <img class="back-face" src="./assets/images/konoha_leaf-logo-277E238E29-seeklogo.com.png"
+                alt="Picture Thumbnail" />
+        </div>
+        <div class="mode-hard" data-framework="guy">
+            <img class="front-face" src="./assets/images/guy.jpg" alt="guy" />
+            <img class="back-face" src="./assets/images/konoha_leaf-logo-277E238E29-seeklogo.com.png"
+                alt="Picture Thumbnail" />
+        </div>
+        <div class="mode-hard" data-framework="kiba">
+            <img class="front-face" src="./assets/images/kiba.jpg" alt="kiba" />
+            <img class="back-face" src="./assets/images/konoha_leaf-logo-277E238E29-seeklogo.com.png"
+                alt="Picture Thumbnail" />
+        </div>
+        <div class="mode-hard" data-framework="kiba">
+            <img class="front-face" src="./assets/images/kiba.jpg" alt="kiba" />
+            <img class="back-face" src="./assets/images/konoha_leaf-logo-277E238E29-seeklogo.com.png"
+                alt="Picture Thumbnail" />
+        </div>
+        <div class="mode-hard" data-framework="temari">
+            <img class="front-face" src="./assets/images/temari.jpg" alt="temari" />
+            <img class="back-face" src="./assets/images/konoha_leaf-logo-277E238E29-seeklogo.com.png"
+                alt="Picture Thumbnail" />
+        </div>
+        <div class="mode-hard" data-framework="temari">
+            <img class="front-face" src="./assets/images/temari.jpg" alt="temari" />
+            <img class="back-face" src="./assets/images/konoha_leaf-logo-277E238E29-seeklogo.com.png"
+                alt="Picture Thumbnail" />
+        </div>
+        <div class="mode-hard" data-framework="serangga">
+            <img class="front-face" src="./assets/images/serangga.jpg" alt="serangga" />
+            <img class="back-face" src="./assets/images/konoha_leaf-logo-277E238E29-seeklogo.com.png"
+                alt="Picture Thumbnail" />
+        </div>
+        <div class="mode-hard" data-framework="serangga">
+            <img class="front-face" src="./assets/images/serangga.jpg" alt="serangga" />
+            <img class="back-face" src="./assets/images/konoha_leaf-logo-277E238E29-seeklogo.com.png"
+                alt="Picture Thumbnail" />
+        </div>
+        <div class="mode-hard" data-framework="kabuto">
+            <img class="front-face" src="./assets/images/kabuto.jpg" alt="kabuto" />
+            <img class="back-face" src="./assets/images/konoha_leaf-logo-277E238E29-seeklogo.com.png"
+                alt="Picture Thumbnail" />
+        </div>
+        <div class="mode-hard" data-framework="kabuto">
+            <img class="front-face" src="./assets/images/kabuto.jpg" alt="kabuto" />
+            <img class="back-face" src="./assets/images/konoha_leaf-logo-277E238E29-seeklogo.com.png"
+                alt="Picture Thumbnail" />
+        </div>
+        <div class="mode-hard" data-framework="gaara">
+            <img class="front-face" src="./assets/images/gaara.jpg" alt="gaara" />
+            <img class="back-face" src="./assets/images/konoha_leaf-logo-277E238E29-seeklogo.com.png"
+                alt="Picture Thumbnail" />
+        </div>
+        <div class="mode-hard" data-framework="gaara">
+            <img class="front-face" src="./assets/images/gaara.jpg" alt="gaara" />
+            <img class="back-face" src="./assets/images/konoha_leaf-logo-277E238E29-seeklogo.com.png"
+                alt="Picture Thumbnail" />
+        </div>
+    </section>
+    <section id="game-alterra">
+
+        <div class="mode-alterra" data-framework="naruto">
+            <img class="front-face" src="./assets/images/naruto.jpg" alt="naruto" />
+            <img class="back-face" src="./assets/images/konoha_leaf-logo-277E238E29-seeklogo.com.png"
+                alt="Picture Thumbnail" />
+        </div>
+        <div class="mode-alterra" data-framework="naruto">
+            <img class="front-face" src="./assets/images/naruto.jpg" alt="naruto" />
+            <img class="back-face" src="./assets/images/konoha_leaf-logo-277E238E29-seeklogo.com.png"
+                alt="Picture Thumbnail" />
+        </div>
+
+        <div class="mode-alterra" data-framework="sakura">
+            <img class="front-face" src="./assets/images/sakura.jpg" alt="sakura" />
+            <img class="back-face" src="./assets/images/konoha_leaf-logo-277E238E29-seeklogo.com.png"
+                alt="Picture Thumbnail" />
+        </div>
+        <div class="mode-alterra" data-framework="sakura">
+            <img class="front-face" src="./assets/images/sakura.jpg" alt="sakura" />
+            <img class="back-face" src="./assets/images/konoha_leaf-logo-277E238E29-seeklogo.com.png"
+                alt="Picture Thumbnail" />
+        </div>
+
+        <div class="mode-alterra" data-framework="sasuke">
+            <img class="front-face" src="./assets/images/sasuke.jpg" alt="sasuke" />
+            <img class="back-face" src="./assets/images/konoha_leaf-logo-277E238E29-seeklogo.com.png"
+                alt="Picture Thumbnail" />
+        </div>
+        <div class="mode-alterra" data-framework="sasuke">
+            <img class="front-face" src="./assets/images/sasuke.jpg" alt="sasuke" />
+            <img class="back-face" src="./assets/images/konoha_leaf-logo-277E238E29-seeklogo.com.png"
+                alt="Picture Thumbnail" />
+        </div>
+
+        <div class="mode-alterra" data-framework="neji">
+            <img class="front-face" src="./assets/images/neji.jpg" alt="neji" />
+            <img class="back-face" src="./assets/images/konoha_leaf-logo-277E238E29-seeklogo.com.png"
+                alt="Picture Thumbnail" />
+        </div>
+        <div class="mode-alterra" data-framework="neji">
+            <img class="front-face" src="./assets/images/neji.jpg" alt="neji" />
+            <img class="back-face" src="./assets/images/konoha_leaf-logo-277E238E29-seeklogo.com.png"
+                alt="Picture Thumbnail" />
+        </div>
+
+        <div class="mode-alterra" data-framework="rocklee">
+            <img class="front-face" src="./assets/images/rocklee.jpg" alt="rocklee" />
+            <img class="back-face" src="./assets/images/konoha_leaf-logo-277E238E29-seeklogo.com.png"
+                alt="Picture Thumbnail" />
+        </div>
+        <div class="mode-alterra" data-framework="rocklee">
+            <img class="front-face" src="./assets/images/rocklee.jpg" alt="rocklee" />
+            <img class="back-face" src="./assets/images/konoha_leaf-logo-277E238E29-seeklogo.com.png"
+                alt="Picture Thumbnail" />
+        </div>
+
+        <div class="mode-alterra" data-framework="kakashi">
+            <img class="front-face" src="./assets/images/kakashi.jpg" alt="kakashi" />
+            <img class="back-face" src="./assets/images/konoha_leaf-logo-277E238E29-seeklogo.com.png"
+                alt="Picture Thumbnail" />
+        </div>
+        <div class="mode-alterra" data-framework="kakashi">
+            <img class="front-face" src="./assets/images/kakashi.jpg" alt="kakashi" />
+            <img class="back-face" src="./assets/images/konoha_leaf-logo-277E238E29-seeklogo.com.png"
+                alt="Picture Thumbnail" />
+        </div>
+
+        <div class="mode-alterra" data-framework="guy">
+            <img class="front-face" src="./assets/images/guy.jpg" alt="guy" />
+            <img class="back-face" src="./assets/images/konoha_leaf-logo-277E238E29-seeklogo.com.png"
+                alt="Picture Thumbnail" />
+        </div>
+        <div class="mode-alterra" data-framework="guy">
+            <img class="front-face" src="./assets/images/guy.jpg" alt="guy" />
+            <img class="back-face" src="./assets/images/konoha_leaf-logo-277E238E29-seeklogo.com.png"
+                alt="Picture Thumbnail" />
+        </div>
+        <div class="mode-alterra" data-framework="kiba">
+            <img class="front-face" src="./assets/images/kiba.jpg" alt="kiba" />
+            <img class="back-face" src="./assets/images/konoha_leaf-logo-277E238E29-seeklogo.com.png"
+                alt="Picture Thumbnail" />
+        </div>
+        <div class="mode-alterra" data-framework="kiba">
+            <img class="front-face" src="./assets/images/kiba.jpg" alt="kiba" />
+            <img class="back-face" src="./assets/images/konoha_leaf-logo-277E238E29-seeklogo.com.png"
+                alt="Picture Thumbnail" />
+        </div>
+        <div class="mode-alterra" data-framework="temari">
+            <img class="front-face" src="./assets/images/temari.jpg" alt="temari" />
+            <img class="back-face" src="./assets/images/konoha_leaf-logo-277E238E29-seeklogo.com.png"
+                alt="Picture Thumbnail" />
+        </div>
+        <div class="mode-alterra" data-framework="temari">
+            <img class="front-face" src="./assets/images/temari.jpg" alt="temari" />
+            <img class="back-face" src="./assets/images/konoha_leaf-logo-277E238E29-seeklogo.com.png"
+                alt="Picture Thumbnail" />
+        </div>
+        <div class="mode-alterra" data-framework="serangga">
+            <img class="front-face" src="./assets/images/serangga.jpg" alt="serangga" />
+            <img class="back-face" src="./assets/images/konoha_leaf-logo-277E238E29-seeklogo.com.png"
+                alt="Picture Thumbnail" />
+        </div>
+        <div class="mode-alterra" data-framework="serangga">
+            <img class="front-face" src="./assets/images/serangga.jpg" alt="serangga" />
+            <img class="back-face" src="./assets/images/konoha_leaf-logo-277E238E29-seeklogo.com.png"
+                alt="Picture Thumbnail" />
+        </div>
+        <div class="mode-alterra" data-framework="kabuto">
+            <img class="front-face" src="./assets/images/kabuto.jpg" alt="kabuto" />
+            <img class="back-face" src="./assets/images/konoha_leaf-logo-277E238E29-seeklogo.com.png"
+                alt="Picture Thumbnail" />
+        </div>
+        <div class="mode-alterra" data-framework="kabuto">
+            <img class="front-face" src="./assets/images/kabuto.jpg" alt="kabuto" />
+            <img class="back-face" src="./assets/images/konoha_leaf-logo-277E238E29-seeklogo.com.png"
+                alt="Picture Thumbnail" />
+        </div>
+        <div class="mode-alterra" data-framework="gaara">
+            <img class="front-face" src="./assets/images/gaara.jpg" alt="gaara" />
+            <img class="back-face" src="./assets/images/konoha_leaf-logo-277E238E29-seeklogo.com.png"
+                alt="Picture Thumbnail" />
+        </div>
+        <div class="mode-alterra" data-framework="gaara">
+            <img class="front-face" src="./assets/images/gaara.jpg" alt="gaara" />
+            <img class="back-face" src="./assets/images/konoha_leaf-logo-277E238E29-seeklogo.com.png"
+                alt="Picture Thumbnail" />
+        </div>
+        <div class="mode-alterra" data-framework="boneka">
+            <img class="front-face" src="./assets/images/boneka.jpg" alt="boneka" />
+            <img class="back-face" src="./assets/images/konoha_leaf-logo-277E238E29-seeklogo.com.png"
+                alt="Picture Thumbnail" />
+        </div>
+        <div class="mode-alterra" data-framework="boneka">
+            <img class="front-face" src="./assets/images/boneka.jpg" alt="boneka" />
+            <img class="back-face" src="./assets/images/konoha_leaf-logo-277E238E29-seeklogo.com.png"
+                alt="Picture Thumbnail" />
+        </div>
+        <div class="mode-alterra" data-framework="pain">
+            <img class="front-face" src="./assets/images/pain.jpg" alt="pain" />
+            <img class="back-face" src="./assets/images/konoha_leaf-logo-277E238E29-seeklogo.com.png"
+                alt="Picture Thumbnail" />
+        </div>
+        <div class="mode-alterra" data-framework="pain">
+            <img class="front-face" src="./assets/images/pain.jpg" alt="pain" />
+            <img class="back-face" src="./assets/images/konoha_leaf-logo-277E238E29-seeklogo.com.png"
+                alt="Picture Thumbnail" />
+        </div>
+        <div class="mode-alterra" data-framework="orochimaru">
+            <img class="front-face" src="./assets/images/orochimaru.jpg" alt="orochimaru" />
+            <img class="back-face" src="./assets/images/konoha_leaf-logo-277E238E29-seeklogo.com.png"
+                alt="Picture Thumbnail" />
+        </div>
+        <div class="mode-alterra" data-framework="orochimaru">
+            <img class="front-face" src="./assets/images/orochimaru.jpg" alt="orochimaru" />
+            <img class="back-face" src="./assets/images/konoha_leaf-logo-277E238E29-seeklogo.com.png"
+                alt="Picture Thumbnail" />
+        </div>
+        <div class="mode-alterra" data-framework="tulang">
+            <img class="front-face" src="./assets/images/tulang.jpg" alt="tulang" />
+            <img class="back-face" src="./assets/images/konoha_leaf-logo-277E238E29-seeklogo.com.png"
+                alt="Picture Thumbnail" />
+        </div>
+        <div class="mode-alterra" data-framework="tulang">
+            <img class="front-face" src="./assets/images/tulang.jpg" alt="tulang" />
+            <img class="back-face" src="./assets/images/konoha_leaf-logo-277E238E29-seeklogo.com.png"
+                alt="Picture Thumbnail" />
+        </div>
+        <div class="mode-alterra" data-framework="jiraiya">
+            <img class="front-face" src="./assets/images/jiraiya.jpg" alt="jiraiya" />
+            <img class="back-face" src="./assets/images/konoha_leaf-logo-277E238E29-seeklogo.com.png"
+                alt="Picture Thumbnail" />
+        </div>
+        <div class="mode-alterra" data-framework="jiraiya">
+            <img class="front-face" src="./assets/images/jiraiya.jpg" alt="jiraiya" />
+            <img class="back-face" src="./assets/images/konoha_leaf-logo-277E238E29-seeklogo.com.png"
+                alt="Picture Thumbnail" />
+        </div>
+        <div class="mode-alterra" data-framework="kisame">
+            <img class="front-face" src="./assets/images/kisame.jpg" alt="kisame" />
+            <img class="back-face" src="./assets/images/konoha_leaf-logo-277E238E29-seeklogo.com.png"
+                alt="Picture Thumbnail" />
+        </div>
+        <div class="mode-alterra" data-framework="kisame">
+            <img class="front-face" src="./assets/images/kisame.jpg" alt="kisame" />
+            <img class="back-face" src="./assets/images/konoha_leaf-logo-277E238E29-seeklogo.com.png"
+                alt="Picture Thumbnail" />
+        </div>
+    </section>
+    <script src="./script.js"></script>
+</body>
+
+</html>
